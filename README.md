@@ -46,3 +46,6 @@ The full run takes about 25 minutes on two cores.
 | `brats_paired.csv` | ET-vs-ED and NCR-vs-ET comparisons, volume-adjusted classes |
 | `rho_consistency_matrix.csv` | agreement of volume dependence across region–sequence combinations (Supplementary Fig. S3) |
 | `brats_summary.json` | summary statistics quoted in the text |
+
+## License
+Code: MIT. Files in `results/` are derived from the Medical Segmentation Decathlon data and are distributed under CC BY-SA 4.0.
