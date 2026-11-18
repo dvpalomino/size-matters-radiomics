@@ -1,0 +1,53 @@
+# ============================================================
+# PyRadiomics parameter file - provisional VOLUME-ROBUST configuration (66 features)
+# "Size matters in radiomics: standardized features are reproducible but not yet comparable
+#  across region-of-interest sizes" - Supplementary material
+#
+# PyRadiomics enables feature classes for all image types at once, so this file extracts a
+# small superset. Keep only the 66 features listed in volume_robust_features.txt, e.g. with
+#   python select_volume_robust.py features.csv features_volume_robust.csv
+#
+# Intensity normalization: z-score within a tissue mask x 100 before extraction (as in the
+# paper), or normalize: true / normalizeScale: 100 if no mask-based normalization is possible.
+# Discretization: the three GLCM features kept here depend on gray-level differences, not on
+# absolute bin indices, so they are insensitive to where the first bin starts. If other
+# texture features are added, use a fixed, dataset-wide lower bound (IBSI recommendation).
+# ============================================================
+imageType:
+  Original: {}
+  LoG:
+    sigma: [2.0, 3.0]          # mm; sigma 5 mm excluded (strong spatial correlation)
+    binWidth: 2
+  Wavelet:
+    wavelet: coif1
+    start_level: 0
+    level: 1                   # LLL is discarded after extraction (low-pass)
+
+featureClass:
+  firstorder:
+    - Mean
+    - Median
+    - 10Percentile
+    - 90Percentile
+    - Variance
+    - MeanAbsoluteDeviation
+    - RobustMeanAbsoluteDeviation
+    - InterquartileRange
+    - RootMeanSquared          # kept only for wavelet sub-bands (= SD when voxelArrayShift is 0)
+  glcm:
+    - Contrast
+    - Idm
+    - DifferenceVariance
+
+setting:
+  normalize: false             # set true (with normalizeScale: 100) if not normalized beforehand
+  voxelArrayShift: 0
+  binWidth: 5
+  distances: [1]
+  symmetricalGLCM: true
+  force2D: false
+  padDistance: 20
+  preCrop: true
+  correctMask: true
+  geometryTolerance: 0.001
+  label: 1

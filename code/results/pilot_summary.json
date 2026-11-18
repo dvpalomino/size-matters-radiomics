@@ -1,0 +1,36 @@
+{
+ "n_rep": 100,
+ "n_features": 1116,
+ "coarse": {
+  "high": 0.507168458781362,
+  "high_n": 566,
+  "tex_high": 0.6078431372549019,
+  "fo_high": 0.38492063492063494,
+  "robust_max": 0.7905,
+  "robust_median": 0.59855,
+  "robust_medium": 17,
+  "robust_paired_median": 0.665,
+  "robust_paired_max": 0.98,
+  "robust_paired_high": 22,
+  "all_paired_median": 0.88,
+  "rho_vs_brats": 0.6458918776912487,
+  "robust_absslope_max": 0.348571785296136
+ },
+ "fine": {
+  "high": 0.5,
+  "high_n": 558,
+  "tex_high": 0.6111111111111112,
+  "fo_high": 0.36507936507936506,
+  "robust_max": 0.6755,
+  "robust_median": 0.54305,
+  "robust_medium": 6,
+  "robust_paired_median": 0.56,
+  "robust_paired_max": 0.8,
+  "robust_paired_high": 3,
+  "all_paired_median": 0.86,
+  "rho_vs_brats": 0.7975393092287968,
+  "robust_absslope_max": 0.14385598528830681
+ },
+ "sentence": "Across independent realizations, about half of all 1,116 features reached high risk (size-only ROC AUC \u2265 0.75), against none of the 66 selected features in the fine texture and 3 in the coarse texture. The location statistics and GLCM Contrast and Idm were unaffected in both textures, whereas the spread statistics increased slightly with ROI size (size slope at most 0.35, against about 1 for extensive features), because a small ROI spans fewer correlation lengths of the texture (Supplementary Table S3 and Supplementary Fig. S2).",
+ "results_text": "Because the textures are stationary, every size effect here is an artifact of sampling. About half of all features reached high risk in each texture (558 and 566 of 1,116; median size-only ROC AUC 0.75), mostly in the GLRLM, GLSZM, GLDM and NGTDM families (61% at high risk), as in the healthy brain. The proportion was higher than in the patients because realizations of the same texture vary less than patients do. The ranking of features by size-only ROC AUC agreed with that measured in healthy brain on FLAIR (Spearman \u03c1 = 0.80 for the fine and 0.65 for the coarse texture). The volume-robust configuration had a median size-only ROC AUC of 0.54 (fine) and 0.60 (coarse). None of its location statistics (mean, median, 10th and 90th percentiles) or GLCM Contrast and Idm features reached even medium risk. Its spread statistics and GLCM DifferenceVariance increased slightly with ROI size (size slope at most 0.14 in the fine and 0.35 in the coarse texture, against about 1 for extensive features): 6 features reached medium risk in the fine texture (maximum 0.68), and in the coarse texture 17 reached medium and 3 high risk (maximum 0.79; original Variance and MeanAbsoluteDeviation and LoG \u03c3 = 2 mm Variance). This residual effect is an estimation bias of spread statistics: in a spatially correlated image, a small ROI spans few correlation lengths and slightly underestimates the spread. It is smaller on images with a short spatial scale, consistent with the restriction of the configuration to such images."
+}

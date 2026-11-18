@@ -1,0 +1,7 @@
+pyradiomics==3.1.0
+SimpleITK>=2.2
+numpy
+scipy
+pandas
+joblib
+matplotlib
