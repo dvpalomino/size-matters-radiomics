@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1430940531.svg)](https://doi.org/10.5281/zenodo.23594242)
 # Supplementary code and results
 
 **Size matters in radiomics: standardized features are reproducible but not yet comparable across region-of-interest sizes**
